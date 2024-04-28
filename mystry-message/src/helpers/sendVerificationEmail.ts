@@ -1,7 +1,3 @@
-// import { DbConnect } from "@/lib/dbConnects";
-// import { Mongoose } from "mongoose";
-// import {UserModel} from ""
-
 import { resend } from "@/lib/resend";
 import VerificationEmail from "../../emails/VerificationEmail";
 import { APIResponse } from "@/types/ApiResponse";
@@ -14,8 +10,8 @@ export async function sendVerificationEmail(
   try {
     resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "chiragwalker@gmail.com",
-      subject: "Hello World",
+      to: email,
+      subject: "Verify new Account",
       react: VerificationEmail({ username, otp: verifyCode }),
     });
     return { success: true, message: "Verification Email Sent Successfully " };

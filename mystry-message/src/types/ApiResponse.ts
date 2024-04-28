@@ -4,5 +4,5 @@ export interface APIResponse {
   success: boolean;
   message: string;
   isAcceptingResponse?: boolean;
-  messages?: Message;
+  messages?: Array<Message>;
 }
